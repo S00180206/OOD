@@ -27,7 +27,7 @@ namespace OODLab1Week1
 
         public override string ToString()
         {
-            return $"{BandName }" /*{()}*/;
+            return $"{BandName }";
         }
 
         public int CompareTo(object obj)
