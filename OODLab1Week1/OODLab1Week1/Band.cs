@@ -11,13 +11,13 @@ namespace OODLab1Week1
         public enum BandGenre { pop, rock , indie };
         public string BandName { get; set; }
 
-        public int Formed { get; set; }
+        public DateTime Formed { get; set; }
 
         public string Members { get; set; }
 
         public BandGenre bandGenre1;
 
-        public Band(string bandName, int formed, string members, BandGenre bandGenre)
+        public Band(string bandName, DateTime formed, string members, BandGenre bandGenre)
         {
             BandName = bandName;
             Formed = formed;
@@ -27,7 +27,7 @@ namespace OODLab1Week1
 
         public override string ToString()
         {
-            return $"{BandName }";
+            return $"{BandName } {Formed.ToShortDateString()}";
         }
 
         public int CompareTo(object obj)
@@ -36,7 +36,7 @@ namespace OODLab1Week1
 
             int returnValue = this.bandGenre1.CompareTo(objectThatIAmComparingTo.bandGenre1);
 
-            //return
+            
             return returnValue;
         }
     }
