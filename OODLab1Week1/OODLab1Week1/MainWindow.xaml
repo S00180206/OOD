@@ -16,7 +16,7 @@
         <Label x:Name="label" Content="Bands" HorizontalAlignment="Left" Margin="52,14,0,0" VerticalAlignment="Top" Height="34" Width="87" FontSize="20"/>
         <Label x:Name="label_Copy" Content="Band Information" HorizontalAlignment="Left" Margin="134.25,14,0,0" VerticalAlignment="Top" Height="46" Width="216" FontSize="20" Grid.Column="1"/>
         <Label x:Name="label_Copy1" Content="Albums" HorizontalAlignment="Left" Margin="134.25,175,0,0" VerticalAlignment="Top" Height="46" Width="85" FontSize="20" Grid.Column="1"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="130,59,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbGenreband" HorizontalAlignment="Left" Margin="130,59,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbGenreband_SelectionChanged"/>
         <Label x:Name="label_Copy2" Content="Genre" HorizontalAlignment="Left" Margin="56,49,0,0" VerticalAlignment="Top" Height="34" Width="58" FontSize="15"/>
         <ListBox x:Name="lbAlbums" HorizontalAlignment="Left" Height="124" Margin="132.25,212,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1"/>
         <TextBox x:Name="tbInfo" HorizontalAlignment="Left" Height="96" Margin="147.25,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" Grid.Column="1"/>

@@ -8,10 +8,24 @@ namespace OODLab1Week1
 {
     class Album
     {
-        string AlbumName { get; set; }
+        public string AlbumName { get; set; }
 
-        int Released { get; set; }
+        public DateTime Released { get; set; }
 
-        double sales { get; set; }
+        public double Sales { get; set; }
+
+        public Album(string albumName, DateTime released, double sales)
+        {
+            AlbumName = albumName;
+            Released = released ;
+            Sales = sales;
+        }
+
+
+
+        public override string ToString()
+        {
+            return $"{AlbumName}\t{Released}\t{Sales}";
+        }
     }
 }
