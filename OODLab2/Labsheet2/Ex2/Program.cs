@@ -76,20 +76,6 @@ namespace Ex2
             return string.Format ("{0,-30}{1:F0} MB\t{2}", Name, Length/1000, CreationTime); 
         }
 
- //       Exercise10
- //       List<Customer> customers = GetCustomers();
- //       var query = from cust in customers
- //                   where (cust.City == "Dublin" || cust.City == "Galway")
- //                   orderby cust.Name
- //                   select cust.Name;
-
- //       var query = customers
- //           .Where(c => c.City == "Dublin")
- //           .Select(c => c.Name);
-
- //       foreach (var name in query)
-	//{
- //           Console.WriteLine(name);
-	//}
+ 
 }
 }
