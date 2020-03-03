@@ -33,7 +33,7 @@ namespace OODLab4
             //populate the suppliers listbox using anomyous type
             var query1=from s in db.Suppliers,
                        orderby s.SuppliersID,
-                        Country
+                        Countryvc
 
         }
     }
