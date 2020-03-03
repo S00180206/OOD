@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="208" Margin="110,120,0,0" VerticalAlignment="Top" Width="175"/>
-        <RadioButton x:Name="RBShowName" Content="ShowName" HorizontalAlignment="Left" Margin="9,161,0,0" VerticalAlignment="Top" Width="83"/>
+        <RadioButton x:Name="RBShowName" Content="ShowName" HorizontalAlignment="Left" Margin="9,161,0,0" VerticalAlignment="Top" Width="83" Loaded="RBShowName_Loaded"/>
         <RadioButton x:Name="RBPopularity" Content="Popularity" HorizontalAlignment="Left" Margin="9,209,0,0" VerticalAlignment="Top" Width="83"/>
         <RadioButton x:Name="RBAverageViews" Content="AverageViews" HorizontalAlignment="Left" Margin="9,256,0,0" VerticalAlignment="Top" Width="94"/>
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="42,14,0,0" VerticalAlignment="Top" Width="145" Height="37"/>
@@ -16,6 +16,14 @@
         <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top"/>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="348,168,0,0" VerticalAlignment="Top" Width="75"/>
         <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="208" Margin="497,121,0,0" VerticalAlignment="Top" Width="175"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="22" Margin="136,2,0,0" VerticalAlignment="Top" Width="257">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

@@ -13,15 +13,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IndividualProject_S00180206
+namespace OODLab4
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Comic_FranchiseShows> AllComic_FranchiseShows;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -29,11 +27,13 @@ namespace IndividualProject_S00180206
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
-        }
+            //Poppulate stock level list box
+            lbxStock.ItemsSource = Enum.GetNames(typeof(StockLevel));
 
-        private void RBShowName_Loaded(object sender, RoutedEventArgs e)
-        {
+            //populate the suppliers listbox using anomyous type
+            var query1=from s in db.Suppliers,
+                       orderby s.SuppliersID,
+                        Country
 
         }
     }
