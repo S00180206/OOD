@@ -6,20 +6,25 @@ using System.Threading.Tasks;
 
 namespace IndividualProject_S00180206
 {
-    public enum GenreType { ActionAdventure, Crime, Fantacy, Horror, Drama, Comedy}
+    
     class Comic_FranchiseShows:IComparable
     {
-        public string ShowName { get; set; }
-
+        public enum GenreType { ActionAdventure, Crime, Fantacy, Horror, Drama, Comedy };
+        public string ShowName { get; set; }        
         public DateTime DateOfRelease { get; set; }
-
         public int AverageViews { get; set; }
 
         public string LeadCharacters { get; set; }
 
 
 
-
+        public Comic_FranchiseShows(string showName, string leadCharacters, DateTime dateOfRelease, int averageViews)
+        {
+            ShowName = showName;
+            LeadCharacters = leadCharacters;
+            AverageViews = averageViews;
+            DateOfRelease = dateOfRelease;
+        }
         public int CompareTo(object obj)
         {
             Comic_FranchiseShows that = obj as Comic_FranchiseShows;
