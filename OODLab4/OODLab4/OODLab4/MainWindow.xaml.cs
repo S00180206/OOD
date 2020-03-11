@@ -103,7 +103,7 @@ namespace OODLab4
             string country = (string)(lbxCountry.SelectedValue);
 
             var query = from p in db.Products
-                        where p.Country == country
+                        where p.Supplier.Country == country
                         orderby p.ProductName
                         select p.ProductName;
 
