@@ -24,9 +24,9 @@
         <Label  Content="Product" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
         
         <ListBox x:Name="lbxProduct" HorizontalAlignment="Left" Height="131" Margin="14,11,0,0" Grid.Row="3" VerticalAlignment="Top" Width="758" Grid.ColumnSpan="3"/>
-        <ListBox x:Name="lbxCountry" Grid.Column="2" HorizontalAlignment="Left" Height="127" Margin="18,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="156"/>
-        <ListBox x:Name="lbxStock" HorizontalAlignment="Left" Height="127" Margin="20,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="156"/>
-        <ListBox x:Name="lbxSuppliers" HorizontalAlignment="Left" Height="127" Margin="18,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="358" Grid.Column="1"/>
+        <ListBox x:Name="lbxCountry" SelectionChanged="lbxCountry_SlectionChanged" Grid.Column="2" HorizontalAlignment="Left" Height="127" Margin="18,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="156"/>
+        <ListBox x:Name="lbxStock"  SelectionChanged="lbxStock_SlectionChanged"  HorizontalAlignment="Left" Height="127" Margin="20,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="156"/>
+        <ListBox x:Name="lbxSuppliers" SelectionChanged="lbxSupplier_SlectionChanged" DisplayMemberPath="SupplierName" SelectedValuePath="SupplierID" HorizontalAlignment="Left" Height="127" Margin="18,12,0,0" Grid.Row="1" VerticalAlignment="Top" Width="358" Grid.Column="1"/>
 
     </Grid>
 </Window>

@@ -55,12 +55,60 @@ namespace OODLab4
 
         private void lbxStock_SlectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var query = from p in db.Products
+                        where p.UnitsInStock < 50
+                        orderby p.ProductName
+                        select p.ProductName;
 
+            string selected = lbxStock.SelectedItem as string;
+
+            switch(selected)
+            {
+                case "Low":
+                    //do nothing as a query sorted from the above
+                    break;
+                case "Normal":
+                    query = from p in db.Products
+                            where p.UnitsInStock < 50 && p.UnitsInStock<=100
+                            orderby p.ProductName
+                            select p.ProductName;
+                    break;
+                case"OverStocked":
+                    query = from p in db.Products
+                            where p.UnitsInStock > 100
+                            orderby p.ProductName
+                            select p.ProductName;
+                    break;
+
+                    
+            }
+            //update the product list
+            lbxProduct.ItemsSource = query.ToList();
         }
         private void lbxSupplier_SlectionChanged(object sender, SelectionChangedEventArgs e)
-        { }
+        {
+            //using the selection value path
+            int supplierID = Convert.ToInt32(lbxSuppliers.SelectedValue);
+
+            var query = from p in db.Products
+                        where p.SupplierID == supplierID
+                        orderby p.ProductName
+                        select p.ProductName;
+
+            //update product list
+            lbxProduct.ItemsSource = query.ToList();
+        }
         private void lbxCountry_SlectionChanged(object sender, SelectionChangedEventArgs e)
-        { }
+        {
+            string country = (string)(lbxCountry.SelectedValue);
+
+            var query = from p in db.Products
+                        where p.Supplier.Country == country
+                        orderby p.ProductName
+                        select p.ProductName;
+
+            lbxProduct.ItemsSource = query.ToList();
+        }
 
     }//end
 
