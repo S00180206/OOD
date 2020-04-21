@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{366C33C1-1F46-49D9-8FBA-07223FC323E3}</ProjectGuid>
+    <ProjectGuid>{9BF0B898-DCF6-4B17-BE21-4225533F509B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>OODLab8</RootNamespace>
-    <AssemblyName>OODLab8</AssemblyName>
+    <RootNamespace>Exercise2</RootNamespace>
+    <AssemblyName>Exercise2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -73,22 +73,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Character.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202004171312093_InitialCreate.cs" />
-    <Compile Include="Migrations\202004171312093_InitialCreate.designer.cs">
-      <DependentUpon>202004171312093_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004171434273_AddHomeGround.cs" />
-    <Compile Include="Migrations\202004171434273_AddHomeGround.designer.cs">
-      <DependentUpon>202004171434273_AddHomeGround.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -102,12 +93,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202004171312093_InitialCreate.resx">
-      <DependentUpon>202004171312093_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004171434273_AddHomeGround.resx">
-      <DependentUpon>202004171434273_AddHomeGround.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

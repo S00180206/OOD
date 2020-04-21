@@ -1,0 +1,11 @@
+﻿
+
+Attempting to gather dependency information for package 'EntityFramework.6.4.0' with respect to project 'Exercise2', targeting '.NETFramework,Version=v4.6.1'
+Gathering dependency information took 647.38 ms
+Attempting to resolve dependencies for package 'EntityFramework.6.4.0' with DependencyBehavior 'Lowest'
+Resolving dependency information took 0 ms
+Resolving actions to install package 'EntityFramework.6.4.0'
+Resolved actions to install package 'EntityFramework.6.4.0'
+Package 'EntityFramework.6.4.0' already exists in folder 'C:\Users\Carmel O'Donnell\Documents\GitHub\OOD\OODLab8\packages'
+Added package 'EntityFramework.6.4.0' to 'packages.config'
+Executing script file 'C:\Users\Carmel O'Donnell\Documents\GitHub\OOD\OODLab8\packages\EntityFramework.6.4.0\tools\init.ps1'...
