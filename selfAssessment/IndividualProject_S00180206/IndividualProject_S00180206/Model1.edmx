@@ -80,9 +80,9 @@
           <EntitySet Name="Shows" EntityType="Model1.Show" />
           <EntitySet Name="Companies" EntityType="Model1.Company" />
           <EntitySet Name="ShowDiscriptions" EntityType="Model1.ShowDiscription" />
-          <AssociationSet Name="CompanyShow" Association="Model1.CompanyShow">
-            <End Role="Company" EntitySet="Companies" />
+          <AssociationSet Name="ShowCompany" Association="Model1.ShowCompany">
             <End Role="Show" EntitySet="Shows" />
+            <End Role="Company" EntitySet="Companies" />
           </AssociationSet>
           <AssociationSet Name="ShowShowDiscription" Association="Model1.ShowShowDiscription">
             <End Role="Show" EntitySet="Shows" />
@@ -96,10 +96,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Release" Type="DateTime" Nullable="false" />
-          <Property Name="Company" Type="String" Nullable="false" />
           <Property Name="ShowImage" Type="String" Nullable="false" />
-          <NavigationProperty Name="Company1" Relationship="Model1.CompanyShow" FromRole="Show" ToRole="Company" />
-          <NavigationProperty Name="ShowDiscription" Relationship="Model1.ShowShowDiscription" FromRole="Show" ToRole="ShowDiscription" />
+          <NavigationProperty Name="Companies" Relationship="Model1.ShowCompany" FromRole="Show" ToRole="Company" />
+          <NavigationProperty Name="ShowDiscriptions" Relationship="Model1.ShowShowDiscription" FromRole="Show" ToRole="ShowDiscription" />
         </EntityType>
         <EntityType Name="Company">
           <Key>
@@ -108,7 +107,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CompanyName" Type="String" Nullable="false" />
           <Property Name="StreamingService" Type="String" Nullable="false" />
-          <NavigationProperty Name="Shows" Relationship="Model1.CompanyShow" FromRole="Company" ToRole="Show" />
+          <NavigationProperty Name="Show" Relationship="Model1.ShowCompany" FromRole="Company" ToRole="Show" />
+          <Property Name="ShowId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ShowDiscription">
           <Key>
@@ -118,23 +118,32 @@
           <Property Name="Genre" Type="String" Nullable="false" />
           <Property Name="NumberOfSeasons" Type="Int32" Nullable="false" />
           <Property Name="ViewerCount" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Shows" Relationship="Model1.ShowShowDiscription" FromRole="ShowDiscription" ToRole="Show" />
+          <NavigationProperty Name="Show" Relationship="Model1.ShowShowDiscription" FromRole="ShowDiscription" ToRole="Show" />
+          <Property Name="ShowId" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="CompanyShow">
-          <End Type="Model1.Company" Role="Company" Multiplicity="1" />
-          <End Type="Model1.Show" Role="Show" Multiplicity="*" />
+        <Association Name="ShowCompany">
+          <End Type="Model1.Show" Role="Show" Multiplicity="1" />
+          <End Type="Model1.Company" Role="Company" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Company">
+            <Principal Role="Show">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Show">
-              <PropertyRef Name="CompanyId" />
+            <Dependent Role="Company">
+              <PropertyRef Name="ShowId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="ShowShowDiscription">
-          <End Type="Model1.Show" Role="Show" Multiplicity="*" />
-          <End Type="Model1.ShowDiscription" Role="ShowDiscription" Multiplicity="1" />
+          <End Type="Model1.Show" Role="Show" Multiplicity="1" />
+          <End Type="Model1.ShowDiscription" Role="ShowDiscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Show">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShowDiscription">
+              <PropertyRef Name="ShowId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -148,7 +157,6 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Release" ColumnName="Release" />
-          <ScalarProperty Name="Company" ColumnName="Company" />
           <ScalarProperty Name="ShowImage" ColumnName="ShowImage" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -172,14 +180,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="ShowShowDiscription" TypeName="Model1.ShowShowDiscription" StoreEntitySet="Shows">
-      <EndProperty Name="ShowDiscription">
-        <ScalarProperty Name="Id" ColumnName="ShowDiscription_Id" />
-      </EndProperty>
-      <EndProperty Name="Show">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

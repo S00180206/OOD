@@ -20,7 +20,8 @@ namespace IndividualProject_S00180206
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Comic_FranchiseShows> AllComic_FranchiseShows;
+        Model1Container db = new Model1Container();
+        //List<Comic_FranchiseShows> AllComic_FranchiseShows;
 
         public MainWindow()
         {
@@ -29,7 +30,9 @@ namespace IndividualProject_S00180206
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            var query = from s in db.Shows
+                        select s;
+            lbxShows.ItemsSource = query.ToList();
         }
 
         private void RBShowName_Loaded(object sender, RoutedEventArgs e)
