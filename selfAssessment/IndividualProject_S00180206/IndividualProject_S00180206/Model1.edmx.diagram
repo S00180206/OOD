@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d5b1d66c71fb44e5a713be676267d372" Name="Diagram1" >
-        <EntityTypeShape EntityType="Model1.Show" Width="1.5" PointX="4.375" PointY="0.875" />
-        <EntityTypeShape EntityType="Model1.Company" Width="1.5" PointX="7.5" PointY="1" />
-        <EntityTypeShape EntityType="Model1.ShowDiscription" Width="1.5" PointX="1.5" PointY="0.875" />
-        <AssociationConnector Association="Model1.ShowCompany" />
-        <AssociationConnector Association="Model1.ShowShowDiscription" />
+      <Diagram DiagramId="951c15d18afb4929a0235727f90d3d36" Name="Diagram1">
+        <EntityTypeShape EntityType="ComicShowsModel.Company" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicShowsModel.ShowDiscription" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicShowsModel.Show" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="ComicShowsModel.FK_Shows_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicShowsModel.FK_Shows_Discription" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

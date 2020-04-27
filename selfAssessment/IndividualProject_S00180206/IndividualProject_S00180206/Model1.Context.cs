@@ -13,10 +13,10 @@ namespace IndividualProject_S00180206
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Model1Container : DbContext
+    public partial class ComicShowsEntities : DbContext
     {
-        public Model1Container()
-            : base("name=Model1Container")
+        public ComicShowsEntities()
+            : base("name=ComicShowsEntities")
         {
         }
     
@@ -25,8 +25,8 @@ namespace IndividualProject_S00180206
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Show> Shows { get; set; }
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<ShowDiscription> ShowDiscriptions { get; set; }
+        public virtual DbSet<Show> Shows { get; set; }
     }
 }

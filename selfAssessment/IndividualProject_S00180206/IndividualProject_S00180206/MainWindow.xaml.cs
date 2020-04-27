@@ -20,7 +20,7 @@ namespace IndividualProject_S00180206
     /// </summary>
     public partial class MainWindow : Window
     {
-        Model1Container db = new Model1Container();
+        ComicShowsEntities db = new ComicShowsEntities();
         //List<Comic_FranchiseShows> AllComic_FranchiseShows;
 
         public MainWindow()
@@ -30,6 +30,7 @@ namespace IndividualProject_S00180206
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
             var query = from s in db.Shows
                         select s;
             lbxShows.ItemsSource = query.ToList();
@@ -37,6 +38,22 @@ namespace IndividualProject_S00180206
 
         private void RBShowName_Loaded(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void lbxShows_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Show SelectedShow = lbxShows.SelectedItem as Show;
+            if (SelectedShow!=null)
+            {
+                //display info of show
+                string showText = $"show released: {SelectedShow.Release}\nShowDescription: {SelectedShow.ShowDiscription}";
+                tblkShowInfo.Text = showText;
+                //display image
+                imgShow.Source = new BitmapImage(new Uri($"/Images/{SelectedShow.ShowImage}"));
+                //other info
+                lbxShowDescription.ItemsSource = SelectedShow.;
+            }
 
         }
     }

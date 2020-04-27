@@ -14,21 +14,14 @@ namespace IndividualProject_S00180206
     
     public partial class Show
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Show()
-        {
-            this.Companies = new HashSet<Company>();
-            this.ShowDiscriptions = new HashSet<ShowDiscription>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
         public System.DateTime Release { get; set; }
         public string ShowImage { get; set; }
+        public int CompanyId { get; set; }
+        public int ShowDiscription_Id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Company> Companies { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShowDiscription> ShowDiscriptions { get; set; }
+        public virtual Company Company { get; set; }
+        public virtual ShowDiscription ShowDiscription { get; set; }
     }
 }
