@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace IndividualProject_S00180206
 {
-   public partial class ShowDescription
+    public partial class Company
     {
         public override string ToString()
         {
-            return base.ToString();
+            return CompanyName;
         }
     }
 }

@@ -110,7 +110,7 @@
           <NavigationProperty Name="ShowDiscription" Relationship="Self.FK_Shows_Discription" FromRole="Shows" ToRole="ShowDiscriptions" />
         </EntityType>
         <Association Name="FK_Shows_Company">
-          <End Role="Companies" Type="Self.Company" Multiplicity="1" />
+          <End Role="Companies" Type="ComicShowsModel.Company" Multiplicity="1" />
           <End Role="Shows" Type="Self.Show" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Companies">
@@ -134,7 +134,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ComicShowsEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Companies" EntityType="ComicShowsModel.Company" />
           <EntitySet Name="ShowDiscriptions" EntityType="Self.ShowDiscription" />
           <EntitySet Name="Shows" EntityType="Self.Show" />
           <AssociationSet Name="FK_Shows_Company" Association="Self.FK_Shows_Company">

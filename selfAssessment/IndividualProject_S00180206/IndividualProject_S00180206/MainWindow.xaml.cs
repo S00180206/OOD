@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace IndividualProject_S00180206
 {
@@ -47,14 +49,31 @@ namespace IndividualProject_S00180206
             if (SelectedShow!=null)
             {
                 //display info of show
-                string showText = $"show released: {SelectedShow.Release}\nShowDescription: {SelectedShow.ShowDiscription}";
+                string showText = $"show Name: {SelectedShow.Name}\nrelease{SelectedShow.Release}" +
+                    $"\nShowDescription: {SelectedShow.ShowDiscription.Description}";
                 tblkShowInfo.Text = showText;
                 //display image
-                imgShow.Source = new BitmapImage(new Uri($"/Images/{SelectedShow.ShowImage}"));
+                imgShow.Source = new BitmapImage(new Uri($"/Images/{SelectedShow.ShowImage}",UriKind.Relative));
                 //other info
-                lbxShowDescription.ItemsSource = SelectedShow.;
+               //lbxCompany.ItemsSource = SelectedShow.;
             }
 
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Show selectedShow = lbxShows.SelectedItem as Show;
+            if(selectedShow!=null)
+            {
+                string showdata = JsonConvert.SerializeObject(selectedShow, Formatting.Indented);
+                using (StreamWriter sw = new StreamWriter(@"C:\Documents\GitHub\OOD\selfAssessment\IndividualProject_S00180206\data.json"))
+                {
+                    sw.Write(showdata);
+                    sw.Close();
+                }
+            }
+
+            
         }
     }
 }

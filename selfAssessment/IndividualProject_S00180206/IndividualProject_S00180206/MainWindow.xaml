@@ -11,21 +11,20 @@
         <RadioButton x:Name="RBShowName" Content="ShowName" HorizontalAlignment="Left" Margin="9,161,0,0" VerticalAlignment="Top" Width="83" Loaded="RBShowName_Loaded"/>
         <RadioButton x:Name="RBPopularity" Content="Popularity" HorizontalAlignment="Left" Margin="9,209,0,0" VerticalAlignment="Top" Width="83"/>
         <RadioButton x:Name="RBAverageViews" Content="AverageViews" HorizontalAlignment="Left" Margin="9,256,0,0" VerticalAlignment="Top" Width="94"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="42,14,0,0" VerticalAlignment="Top" Width="145" Height="37"/>
+        <Label x:Name="label" Content="Comic Shows Info" HorizontalAlignment="Left" Margin="4,22,0,0" VerticalAlignment="Top" Width="110" Height="42"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="140,89,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="348,168,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListBox x:Name="lbxShowDescription" HorizontalAlignment="Left" Height="94" Margin="497,235,0,0" VerticalAlignment="Top" Width="175"/>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="22" Margin="136,2,0,0" VerticalAlignment="Top" Width="257">
-            <TabItem Header="TabItem">
+        <Label x:Name="label1" Content="Select Genre:" HorizontalAlignment="Left" Margin="39,93,0,0" VerticalAlignment="Top" Width="77"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="348,168,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="22" Margin="4,2,0,0" VerticalAlignment="Top" Width="257">
+            <TabItem Header="MainInfo">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="TabItem">
+            <TabItem Header="More Info">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
-        <TextBlock x:Name="tblkShowInfo" HorizontalAlignment="Left" Margin="432,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="92" Width="174"/>
-        <Image x:Name="imgShow" HorizontalAlignment="Left" Height="100" Margin="653,60,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="tblkShowInfo" HorizontalAlignment="Left" Margin="432,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="268" Width="174"/>
+        <Image x:Name="imgShow" HorizontalAlignment="Left" Height="196" Margin="626,60,0,0" VerticalAlignment="Top" Width="152"/>
 
     </Grid>
 </Window>
