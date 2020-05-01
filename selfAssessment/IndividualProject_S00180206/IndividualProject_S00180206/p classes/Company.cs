@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace IndividualProject_S00180206
 {
+    //partial class that allows to add more info where I cant in its orginal class
     public partial class Company
     {
         public override string ToString()
